@@ -1,10 +1,27 @@
 package com.leonardo.gamestore.domain;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Categoria {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+//informando pro JPA q isso vai ser uma tabela
+@Entity
+public class Categoria implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	//informando que ID vai ser uma chava primária 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY )
+	
 	private Integer id;
 	private String nome;
 	private String descricao;
